@@ -4,7 +4,7 @@
 
 ## 1. Environment Setup
 ```bash
-git clone https://github.com/scottpenco/AI-ENGINEER-ASSIGNMENT-SDGE.git
+git clone https://github.com/scottpenco/AI-ENGINEER-ASSIGNMENT-SDGE-.git
 cd AI-ENGINEER-ASSIGNMENT-SDGE
 
 pip install -r requirements.txt
