@@ -4,6 +4,8 @@
 
 ## Project Overview
 
+Please see: ***docs/masternotebook.pdf*** for full rationale and breakdown of dataset/solution.
+
 ### TCGA-OV Cohort
 
 The TCGA Ovarian Serous Custadenocarcinoma (TCGA-OV) cohort is one of the most comprehensive datasets available for molecular, genetic expression, clinical and phenotypes at patient level. The data set includes multi-omic assays curated through the NCI Genomic Data Commons (GDC). 
