@@ -1,0 +1,8 @@
+{
+  "ks_test_pass_rate": 1.0,
+  "correlation_frobenius": NaN,
+  "duplicate_ratio": 0.0,
+  "mean_nn_distance": 4.227600716876345,
+  "utility_ratio": 0,
+  "chi2_test_pass_rate": 0
+}
