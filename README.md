@@ -28,7 +28,7 @@ Generated data will be tested for statistical fidelity, correlation and similari
 
 ## Why Diffusion Instead of GAN
 
-Tabular cancer data mixes continuous genetic data with categorical clinical variables. Diffusion models ahndle moxed tupes naturally through score-based denoising compared to GAN.
+Tabular cancer data mixes continuous genetic data with categorical clinical variables. Diffusion models handle mixed tupes naturally through score-based denoising compared to GAN.
 Gan's may collapse and ignore minoraity classes, while diffusion models improve on training stability, coverage, and will synthesize better data. 
 
 
@@ -142,7 +142,7 @@ Although the current diffusion based SDGE produces realistic and diverse data, t
         - Compare and contrast different architecture solutions (tabDDPM vs CTGAN)
 
 - 2. Deployment and Production
-        - Build FASTAPI endpoint or develop lightweight UI Dsashboard (streanlit) where users can synthesize cohorts, visualize distributions and validate outputs. 
+        - Build FASTAPI endpoint or develop lightweight UI Dsashboard (streamlit) where users can synthesize cohorts, visualize distributions and validate outputs. 
 
 
 
