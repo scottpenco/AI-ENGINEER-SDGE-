@@ -10,15 +10,14 @@ The TCGA Ovarian Serous Custadenocarcinoma (TCGA-OV) cohort is one of the most c
 
 These datasets were downloaded using the UCSC Xena Browser (associated download scripts, as described in the project README.)
 
+The TCGA-OV dataset is well suited to perform Synthetic Data Generation (SDGE), with rich multi-omic hetoerogentiy and good quality clinical meta data. 
 Generating high-fidelity synthetic biomedical data serves many practical and scientific motivations:
 
 - (1) Privacy Preservation of data sharing 
 - (2) Augment smaller sample biomedical data 
 - (3) Hypothesis exploration (gene/gene correlation structures etc.)
 
-The TCGA-OV dataset is well suited to perform Synthetic Data Generation (SDGE), with rich multi-omic hetoerogentiy and good quality clinical meta data. 
-
-This notebook explores the following workflow of SDGE via a diffusion model on the TCGA-OV dataset:
+This notebook explores the following workflow of SDGE via a **diffusion model** on the TCGA-OV dataset:
 
 - preprocessing of data
 - contstucting a model-ready feature matrix 
