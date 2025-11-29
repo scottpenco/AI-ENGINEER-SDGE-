@@ -75,56 +75,56 @@ python utils/evauate.py
 
 ## Preprocessing explaination
 
-### 1. Data Alignment
+#### 1. Data Alignment
 - Load TCGA-OV FPKM gene expression and clinical metadata.
 - Transpose expression so rows = samples.
 - Left-join clinical features to expression to retain all molecular samples.
 
-### 2. Clinical Cleaning
+#### 2. Clinical Cleaning
 - Drop administrative, redundant, and non-analytic fields (IDs, timestamps, non-primary diagnosis metadata, etc.).
 - Impute missing values:
   - `days_to_death` → `0` for living patients.
   - `days_to_last_follow_up` and `age_at_earliest_diagnosis` → median.
   - Categorical `not reported` / missing → `"Unknown"`.
 
-### 3. Outcome Construction
+#### 3. Outcome Construction
 - Convert `vital_status.demographic` into a binary `death_event` (Dead=1, Alive=0).
 - Supports stratified dataset splitting and downstream survival-related modeling.
 
-### 4. Categorical Encoding
+#### 4. Categorical Encoding
 - One-hot encode all categorical variables (`drop_first=True`) to produce numeric model-ready features.
 
-### 5. Feature Typing
+#### 5. Feature Typing
 - Organize features into:
   - **Genetic:** all `ENSG*` expression genes.
   - **Binary clinical:** one-hot indicators.
   - **Continuous clinical:** age, survival times, etc.
 - Enables type-appropriate transformations.
 
-### 6. Gene Expression Outlier Control
+#### 6. Gene Expression Outlier Control
 - Winsorize all gene expression features to the 1st–99th percentile.
 - Stabilizes PCA and reduces sensitivity to extreme RNA-seq values.
 
-### 7. Train/Validation/Test Split
+#### 7. Train/Validation/Test Split
 - 80/10/10 split using stratification on `death_event` to preserve outcome balance.
 
-### 8. Continuous Feature Scaling
+#### 8. Continuous Feature Scaling
 - Standardize continuous clinical features with `StandardScaler` (fit on train only).
 - Save `scaler.pkl` for reproducibility.
 
-### 9. PCA on Gene Expression
+#### 9. PCA on Gene Expression
 - Fit **32-component PCA** on training gene expression only.
 - Transform validation/test sets using the same PCA.
 - Save `pca_genetic.joblib` + metadata.
 
-### 10. Combo Feature Space
+#### 10. Combo Feature Space
 - Concatenate:
   - PCA latent genetic PCs  
   - Binary clinical features  
   - Scaled continuous features  
 - Produces a compact, well-conditioned input space for DDPM training.
 
-### 11. Scaling the Combo Space
+#### 11. Scaling the Combo Space
 - Fit a separate `StandardScaler` on the combined PCA+clinical space.
 - Save `combo_scaler.joblib` and export scaled train/val/test matrices.
 
