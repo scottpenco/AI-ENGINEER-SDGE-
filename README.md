@@ -12,9 +12,9 @@ These datasets were downloaded using the UCSC Xena Browser (associated download 
 
 Generating high-fidelity synthetic biomedical data serves many practical and scientific motivations:
 
-(1) Privacy Preservation of data sharing 
-(2) Augment smaller sample biomedical data 
-(3) Hypothesis exploration (gene/gene correlation structures etc.)
+- (1) Privacy Preservation of data sharing 
+- (2) Augment smaller sample biomedical data 
+- (3) Hypothesis exploration (gene/gene correlation structures etc.)
 
 The TCGA-OV dataset is well suited to perform Synthetic Data Generation (SDGE), with rich multi-omic hetoerogentiy and good quality clinical meta data. 
 
