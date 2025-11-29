@@ -2,8 +2,6 @@
 """
 Preprocess TCGA-OV data for DDPM synthetic data generation.
 
-Very close in spirit to the previous notebook preprocessing:
-
 - Align expression (ENSG*) and clinical samples.
 - Keep key clinical variables:
     * race.demographic (categorical)
