@@ -147,7 +147,4 @@ Although the current diffusion based SDGE produces realistic and diverse data, t
         - Compare and contrast different architecture solutions (tabDDPM vs CTGAN)
 
 - 2. Deployment and Production
-        - Build FASTAPI endpoint or develop lightweight UI Dsashboard (streamlit) where users can synthesize cohorts, visualize distributions and validate outputs. 
-
-
-
+        - Cleaner file structure and better optimization of code. 
