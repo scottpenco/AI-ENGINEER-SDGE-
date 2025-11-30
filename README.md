@@ -2,7 +2,7 @@
 
 # AI Engineer Assignment – SDGE
 
-##[STREAMLIT APP][https://la3dambdvnnqc8xv7icrwj.streamlit.app]
+## [STREAMLIT APP](https://la3dambdvnnqc8xv7icrwj.streamlit.app)
 
 
 ## Project Overview
