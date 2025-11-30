@@ -225,14 +225,13 @@ app = FastAPI(
 )
 
 class GenerateRequest(BaseModel):
-    n: int = 20  # number of samples to generate
+    n: int = 43  # number of samples to generate
     save: bool = False  # whether to save synthetic_data.csv on disk
 
 
 @app.post("/generate")
 def generate_synthetic_endpoint(payload: GenerateRequest):
     try:
-        # If you want to allow passing a custom output path, you can add it to GenerateRequest
         out_path = os.path.join(CONFIG['data_path'], "synthetic.csv") if payload.save else None
 
         df = generate_synthetic(
@@ -252,6 +251,5 @@ def generate_synthetic_endpoint(payload: GenerateRequest):
         raise HTTPException(status_code=500, detail=str(e))
 
 
-# Optional: run with `python your_file.py` during local dev
 if __name__ == "__main__":
     uvicorn.run("your_file_name:app", host="0.0.0.0", port=8000, reload=True)
