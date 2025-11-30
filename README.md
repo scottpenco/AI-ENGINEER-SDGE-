@@ -2,6 +2,9 @@
 
 # AI Engineer Assignment – SDGE
 
+##[STREAMLIT APP][https://la3dambdvnnqc8xv7icrwj.streamlit.app]
+
+
 ## Project Overview
 
 Please see: ***docs/masternotebook.pdf*** for full rationale and breakdown of dataset/solution.
