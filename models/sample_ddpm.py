@@ -26,8 +26,8 @@ CONFIG = {
     'hidden_dim': 128,  # VERY SMALL - prevent overfitting
     'time_dim': 32,
     'ema_decay': 0.999,  # EMA usef to stabilize the sampking model
-    'data_path': '../data/processed/',
-    'model_path': './',
+    'data_path': './data/processed/',
+    'model_path': './models/',
 }
 
 
