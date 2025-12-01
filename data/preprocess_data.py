@@ -66,10 +66,10 @@ def winsorize_df(df, cols, lower=1, upper=99, verbose=True):
 def main():
 
 # TCGA-OV Gene expression DF 
-    gene_expression = pd.read_csv("./raw/TCGA-OV.star_fpkm.tsv.gz", sep="\t", index_col=0)
+    gene_expression = pd.read_csv("data/raw/TCGA-OV.star_fpkm.tsv.gz", sep="\t", index_col=0)
 
  # TCGA-OV clinical/phenotypic DF 
-    phenotype = pd.read_csv('./raw/TCGA-OV.clinical.tsv.gz', sep="\t", index_col=0)   
+    phenotype = pd.read_csv('data/raw/TCGA-OV.clinical.tsv.gz', sep="\t", index_col=0)   
 
     gene_exp_T = gene_expression.T # Transpose the gene expression data to have rows as samples
 
@@ -77,8 +77,8 @@ def main():
     seed = gene_exp_T.join(phenotype, how='left')
    
     # Create processed
-    os.makedirs("./processed", exist_ok=True)
-    seed.to_csv("processed/seed_matrix.csv")
+    os.makedirs("data/processed", exist_ok=True)
+    seed.to_csv("data/processed/seed_matrix.csv")
     
     # Dropping all columns tagged with sample, annotation, hospital, and project metadata 
     seed_cleaned = seed.drop(seed.filter(regex=r'\.annotations$|\.samples$|\.project$|\.tissue_source_site$').columns, axis=1)
@@ -194,12 +194,12 @@ def main():
     test_df[continuous_cols] = scaler.transform(test_df[continuous_cols])
 
     # Saving scaled DF
-    train_df.to_csv("processed/train_seed.csv", index=False)
-    val_df.to_csv("processed/val_seed.csv", index=False)
-    test_df.to_csv("processed/test_seed.csv", index=False)
+    train_df.to_csv("data/processed/train_seed.csv", index=False)
+    val_df.to_csv("data/processed/val_seed.csv", index=False)
+    test_df.to_csv("data/processed/test_seed.csv", index=False)
 
         # Saving scaler.pkl
-    joblib.dump(scaler, "processed/scaler.pkl")
+    joblib.dump(scaler, "data/processed/scaler.pkl")
 
         # Saving Meta Data
     metadata = {
@@ -208,7 +208,7 @@ def main():
         "all_cols": list(seed_cleaned.columns)
     }
 
-    with open("processed/metadata.json", "w") as f:
+    with open("data/processed/metadata.json", "w") as f:
         json.dump(metadata, f, indent=4)
 
     n_components = 32 
@@ -247,9 +247,9 @@ def main():
 
 
         # Saving combo
-    train_pca_combo.to_csv("processed/train_pca_genetic_combo.csv", index=False)
-    val_pca_combo.to_csv("processed/val_pca_genetic_combo.csv", index=False)
-    test_pca_combo.to_csv("processed/test_pca_genetic_combo.csv", index=False)
+    train_pca_combo.to_csv("data/processed/train_pca_genetic_combo.csv", index=False)
+    val_pca_combo.to_csv("data/processed/val_pca_genetic_combo.csv", index=False)
+    test_pca_combo.to_csv("data/processed/test_pca_genetic_combo.csv", index=False)
 
     joblib.dump(pca_gen, "../models/pca_genetic.joblib")
 
@@ -286,9 +286,9 @@ def main():
     val_combo_scaled   = pd.DataFrame(Z_val,   columns=combo_cols)
     test_combo_scaled  = pd.DataFrame(Z_test,  columns=combo_cols)
 
-    train_combo_scaled.to_csv("processed/train_combo_scaled.csv", index=False)
-    val_combo_scaled.to_csv("processed/val_combo_scaled.csv", index=False)
-    test_combo_scaled.to_csv("processed/test_combo_scaled.csv", index=False)
+    train_combo_scaled.to_csv("data/processed/train_combo_scaled.csv", index=False)
+    val_combo_scaled.to_csv("data/processed/val_combo_scaled.csv", index=False)
+    test_combo_scaled.to_csv("data/processed/test_combo_scaled.csv", index=False)
 
     print("Saved scaled combo datasets with shape:", train_combo_scaled.shape, val_combo_scaled.shape, test_combo_scaled.shape)
 
