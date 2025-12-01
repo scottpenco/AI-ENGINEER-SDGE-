@@ -262,7 +262,7 @@ def main():
         "n_genetic_components": n_components
     }
 
-    with open("../models/pca_genetic_metadata.json", "w") as f:
+    with open("./models/pca_genetic_metadata.json", "w") as f:
         json.dump(metadata, f, indent=2)
 
     print("Saved PCA + datasets.")
