@@ -66,11 +66,11 @@ python models/train_ddpm.py
 python models/sample_ddpm.py
 ```
 
-or use API/generate.py 
+#### or use API/generate.py 
 ```bash
 python api/generate.py --n NUM_SAMPLES CONFIG_PATH
 ```
-FastAPI integration [Allows for POST request]
+#### FastAPI integration [Allows for POST request]
 ```
 cd api
 python FastAPI_generate:app --reload
