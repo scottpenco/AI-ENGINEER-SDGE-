@@ -251,7 +251,7 @@ def main():
     val_pca_combo.to_csv("data/processed/val_pca_genetic_combo.csv", index=False)
     test_pca_combo.to_csv("data/processed/test_pca_genetic_combo.csv", index=False)
 
-    joblib.dump(pca_gen, "../models/pca_genetic.joblib")
+    joblib.dump(pca_gen, "./models/pca_genetic.joblib")
 
     metadata = {
         "expr_cols": expr_cols,
@@ -267,7 +267,7 @@ def main():
 
     print("Saved PCA + datasets.")
 
-    os.makedirs("../models", exist_ok=True)
+    os.makedirs("./models", exist_ok=True)
 
     combo_cols = train_pca_combo.columns.tolist()
     print("Combo dim:", len(combo_cols))
