@@ -45,7 +45,7 @@ DDPM denoising better captures biological variablilty due to its fully stochasti
 ## 1. Environment Setup
 ```bash
 git clone https://github.com/scottpenco/AI-ENGINEER-ASSIGNMENT-SDGE-.git
-cd AI-ENGINEER-ASSIGNMENT-SDGE
+cd AI-ENGINEER-ASSIGNMENT-SDGE-
 
 pip install -r requirements.txt
 ```
