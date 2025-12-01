@@ -66,10 +66,10 @@ def winsorize_df(df, cols, lower=1, upper=99, verbose=True):
 def main():
 
 # TCGA-OV Gene expression DF 
-    gene_expression = pd.read_csv("raw/TCGA-OV.star_fpkm.tsv.gz", sep="\t", index_col=0)
+    gene_expression = pd.read_csv("./raw/TCGA-OV.star_fpkm.tsv.gz", sep="\t", index_col=0)
 
  # TCGA-OV clinical/phenotypic DF 
-    phenotype = pd.read_csv('raw/TCGA-OV.clinical.tsv.gz', sep="\t", index_col=0)   
+    phenotype = pd.read_csv('./raw/TCGA-OV.clinical.tsv.gz', sep="\t", index_col=0)   
 
     gene_exp_T = gene_expression.T # Transpose the gene expression data to have rows as samples
 
