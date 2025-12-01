@@ -24,13 +24,13 @@ CONFIG = {
     'hidden_dim': 128,  # VERY SMALL - prevent overfitting
     'time_dim': 32,
     'ema_decay': 0.999,  # EMA usef to stabilize the sampking model
-    'data_path': '../data/processed/',
-    'model_path': '../models',
+    'data_path': './data/processed/',
+    'model_path': './models',
 }
 
 
 test_df_real = pd.read_csv(f'{CONFIG["data_path"]}test_combo_scaled.csv')
-syn_df = pd.read_csv('../synthetic_data.csv')
+syn_df = pd.read_csv('./synthetic_data.csv')
 
 def evaluate(real_df, syn_df, continuous_cols):
         print("\n" + "="*70)
