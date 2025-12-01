@@ -190,7 +190,8 @@ def main():
     val_df[continuous_cols] = scaler.transform(val_df[continuous_cols])
     test_df[continuous_cols] = scaler.transform(test_df[continuous_cols])
 
-
+    # Create processed
+    os.makedirs("./processed", exist_ok=True)
     # Saving scaled DF
     train_df.to_csv("processed/train_seed.csv", index=False)
     val_df.to_csv("processed/val_seed.csv", index=False)
