@@ -68,7 +68,7 @@ python models/sample_ddpm.py
 
 ### or use API/generate.py 
 ```bash
-python api/generate.py m-- NUM_SAMPLES CONFIG_PATH
+python api/generate.py --n NUM_SAMPLES CONFIG_PATH
 ```
 
 ### Evaluate generated synthetic samples
