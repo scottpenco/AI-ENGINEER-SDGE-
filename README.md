@@ -70,6 +70,7 @@ python models/sample_ddpm.py
 ```bash
 python api/generate.py --n NUM_SAMPLES CONFIG_PATH
 ```
+*see also FastAPI integration
 
 ### Evaluate generated synthetic samples
 ```bash
