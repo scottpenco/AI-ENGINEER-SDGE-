@@ -45,6 +45,7 @@ RAW_DIR = os.path.join(BASE_DIR, "data", "raw")
 # Winsorize to clip outliers to 99, 1 percetile 
 def winsorize_df(df, cols, lower=1, upper=99, verbose=True):
     df = df.copy()  # protect original unless assigned back
+   
     for col in cols:
         col_before = df[col].copy()
         
@@ -74,7 +75,9 @@ def main():
 
     # Performing Left Join to create seed dataset 
     seed = gene_exp_T.join(phenotype, how='left')
-
+   
+    # Create processed
+    os.makedirs("./processed", exist_ok=True)
     seed.to_csv("processed/seed_matrix.csv")
     
     # Dropping all columns tagged with sample, annotation, hospital, and project metadata 
@@ -190,8 +193,6 @@ def main():
     val_df[continuous_cols] = scaler.transform(val_df[continuous_cols])
     test_df[continuous_cols] = scaler.transform(test_df[continuous_cols])
 
-    # Create processed
-    os.makedirs("./processed", exist_ok=True)
     # Saving scaled DF
     train_df.to_csv("processed/train_seed.csv", index=False)
     val_df.to_csv("processed/val_seed.csv", index=False)
