@@ -279,7 +279,7 @@ def main():
     Z_test  = scaler_combo.transform(test_pca_combo.values)
 
     # Save scaler
-    joblib.dump(scaler_combo, "../models/combo_scaler.joblib")
+    joblib.dump(scaler_combo, "./models/combo_scaler.joblib")
 
     # Save scaled combo datasets with same column order
     train_combo_scaled = pd.DataFrame(Z_train, columns=combo_cols)
