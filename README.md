@@ -73,7 +73,7 @@ python api/generate.py --n NUM_SAMPLES CONFIG_PATH
 
 ### Evaluate generated synthetic samples
 ```bash
-python utils/evauate.py
+python utils/evaluate_synthetic_data.py
 ```
 
 ## Preprocessing explaination
