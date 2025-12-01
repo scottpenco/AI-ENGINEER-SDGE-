@@ -16,7 +16,7 @@ import requests
 
 
 # Create Directory
-RAW_DIR = "./raw"
+RAW_DIR = "./data/raw"
 os.makedirs(RAW_DIR, exist_ok=True)
 
 # Files & URls
