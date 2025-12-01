@@ -58,7 +58,7 @@ python data/preprocess_data.py
 
 ### 3. Train the model
 ```bash
-python models/train_ddm.py
+python models/train_ddpm.py
 ```
 
 ### 4. Generate Synthetic Samples
